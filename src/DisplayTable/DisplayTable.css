@@ -1,0 +1,63 @@
+.table-wrapper{
+    margin:0 20px;
+    flex-grow:1;
+    border-radius:10px;
+    border:1px solid black;
+    overflow:hidden;
+    box-shadow:2px 3px 8px black;
+    background-color:white;
+}
+
+.table-row.active{
+    background-color:yellow;
+}
+
+.table-header{
+    margin-right:8px;
+    font-weight:bold;
+}
+
+.data-table{
+    height:75vh;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+}
+
+.table-row{
+    display:flex;
+    border-bottom:1px solid #333;
+    justify-content: space-evenly;
+}
+
+.table-row div{
+    display:flex;
+    align-items: center;
+    border-right:1px solid #333;
+    padding:2px 5px;
+    font-size:12px;
+    width:20%;
+}
+
+.table-header div{
+    padding:5px;
+}
+
+.data-table::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: #F5F5F5;
+}
+
+.data-table::-webkit-scrollbar
+{
+	width: 8px;
+	background-color: #F5F5F5;
+}
+
+.data-table::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #555;
+}

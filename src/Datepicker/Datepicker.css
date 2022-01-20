@@ -1,0 +1,101 @@
+.datepicker{
+    width:100%;
+    display:flex;
+    flex-wrap:wrap;
+    margin:20px;
+    border-radius:20px;
+    background-color:white;
+    box-shadow:2px 3px 8px black;
+    /* border-bottom:2px solid black; */
+}
+
+.datepicker input[type="date"]{
+    font-size:18px;
+}
+
+.datepicker > div,
+.datepicker > form{
+    padding:10px;
+    display:flex;
+    align-items:center;
+}
+
+.datepicker .icon:first-child{
+    transform:translate(-12px, 3px) scale(1.2);
+}
+.datepicker .icon:last-child{
+    transform:translate(10px, 3px) scale(.8);
+    cursor:pointer;
+}
+
+.datepicker .title{
+    width:25%;
+    display: flex;
+    justify-content: center;
+    font-size:.7rem;
+}
+
+.datepicker form{
+    width:40%;
+    border-right:2px solid black;
+    border-left:2px solid black;
+}
+
+.datepicker form input{
+    width:58%;
+
+    padding:5px;
+}
+
+.datepicker form input[type="submit"]{
+    width:40%;
+    margin-left:2%;
+    background-color:#4696FF;
+    color:white;
+    outline:0;
+    border:0;
+    padding:10px 5px;
+    border-radius:10px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.datepicker .total-cases{
+    width:35%;
+    display:flex;
+    justify-content: space-between;
+}
+
+.datepicker .total-cases div{
+    width:50%;
+}
+
+@media only screen and (max-width: 600px){
+	.datepicker{
+        display:block;
+    }
+    .datepicker > div,
+    .datepicker > form{
+        width:100% !important;
+        margin:10px 0;
+        border-right:0;
+        border-left:0;
+        padding:2px;
+        display:flex;
+    }
+    .datepicker form{
+        padding:10px;
+    }
+    .datepicker form input{
+        width:100%;
+        margin:5px 0;
+    }
+    .datepicker .total-cases{
+        display:block;
+        text-align:center;
+    }
+
+    .datepicker .total-cases div{
+        width:100%;
+    }
+}

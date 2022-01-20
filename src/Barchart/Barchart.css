@@ -1,0 +1,37 @@
+#chart {
+   margin:20px 0;
+   background-color:white;
+   min-height:300px;
+   border-radius:10px;
+   border:1px solid black;
+   overflow:hidden;
+   box-shadow:2px 3px 8px black;
+}
+
+#chart text{
+	font-size:10px;
+}
+
+.bar {
+	shape-rendering: crispEdges;
+}
+
+.bar-label{
+    fill: #000;
+	text-anchor: middle;
+	font-size: 18px;
+}
+
+.axis path,
+.axis line {
+	fill: none;
+	stroke: #000;
+	shape-rendering: crispEdges;
+}
+
+.gridline path,
+.gridline line{
+	fill: none;
+	stroke: #333;
+	shape-rendering: crispEdges;
+}
