@@ -16,8 +16,15 @@ function App() {
   const [modal, setModal] = useState(false);
 
   const getData = (date) => {
-    fetch(`https://data.cdc.gov/resource/9mfq-cb36.json?submission_date=${date}`)
+    // fetch(`https://data.cdc.gov/resource/9mfq-cb36.json?submission_date=${date}`)
+    fetch(`/usa/${date}`,{
+      headers : { 
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+       }
+    })
     .then(response => {
+        console.log(response)
       if (response.status !== 200) {
         console.log(`There was a problem: ${response.status}`)
         return

@@ -24,15 +24,13 @@ function Barchart(props){
     }
 
     const plot = (chart, width, height) => {
-       
-        // create scales!
+
         const xScale = d3.scaleBand()
             .domain(data.map(d => d.state))
             .range([0, width]);
         const yScale = d3.scaleLinear()
             .domain([0, d3.max(data, d => d.value)])
             .range([height, 0]);
-        // const colorScale = d3.scaleOrdinal(d3.schemeCategory10);
 
         chart.selectAll('.bar')
             .data(data)
@@ -45,10 +43,9 @@ function Barchart(props){
             .attr('width', d => xScale.bandwidth())
             .attr('stroke', 'white')
             .attr('stroke-width', 2)
-            .style('fill', (d, i) => {
+            .style('fill', (d) => {
                 return `rgb(255,${255 - (d.value*2)},0)`
             });
-            // .style('fill', (d, i) => colorScale(i));
 
         chart.selectAll('.bar-label')
             .data(data)

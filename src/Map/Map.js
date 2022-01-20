@@ -31,8 +31,6 @@ const Map = (props) => {
   
 
   const showTooltip = (e) => {
-    // const topPos = e.target.getBoundingClientRect().top + 50
-    // const leftPos = e.target.getBoundingClientRect().left *.75
     const topPos = e.clientY *.75
     const leftPos = e.clientX
     let today = props.totals.date.split('-')
@@ -50,22 +48,20 @@ const Map = (props) => {
 
   const gradientColor = (num) => {
     if(num === 0) return `rgb(255,255,170)`
-    num--; // working with 0-99 will be easier
+    num--;
     // yellow to red
     let r = 255;
-    // let g =  Math.floor(255 * ((50-num % 50) / 50));
     let g =  255 - (num * 3);
     let b = 0;
     return `rgb(${r},${g},${b})`;
   }
-  //todo calculate color based on distance from average
+
   const calcFill = (d) => {
     if(props.data[props.convertStateName(d.properties.name)] && props.totals){
       let input =  Math.floor(parseInt(props.data[props.convertStateName(d.properties.name)].death));
       let high = props.totals.highDeaths;
       let scale = input / high;
       return gradientColor(scale*100)
-      // return `rgba(255, 0, 0, ${scale}`
     }
   }
 
@@ -80,7 +76,7 @@ const Map = (props) => {
                 key={ `path-${ i }` }
                 d={ geoPath().projection(projection)(d) }
                 className={"state"}
-                fill={ calcFill(d) } //`rgba(38,50,56,${ 1 / geographies.length * i})` 
+                fill={ calcFill(d) } 
                 stroke="#000000"
                 strokeWidth={ 1 }
                 id={d.properties.name}
@@ -93,7 +89,7 @@ const Map = (props) => {
         </g>
       </svg>
       <div className={`tooltip ${tooltip.state ? "active" : ""}`} style={{top:`${tooltip.top}px`,left:`${tooltip.left}px`}}>
-              <div className="header" style={{backgroundColor:`${gradientColor(tooltip.deaths)}`}}>
+              <div className="header">
                 <div><strong>{tooltip.state}</strong></div>
                 <div>{tooltip.date}</div>
               </div>
